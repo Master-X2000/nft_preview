@@ -1,0 +1,191 @@
+/* || FONT */
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Lexend+Deca:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+ 
+
+/* || RESETS */
+
+*,
+*::after,
+*::before{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+img,
+svg,
+canvas{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+/* || VARIABLES */
+
+:root{
+    --TEXT-CLR: hsl(215, 51%, 70%);
+    --HOVER-CLR: hsl(178, 100%, 50%);
+    --BG-CLR: hsl(217, 54%, 11%);
+    --MAIN-BG-CLR: hsl(216, 50%, 16%);
+    --LINE: hsl(215, 32%, 27%);
+    --WHITE: hsl(0, 0%, 100%);
+}
+
+/* || STYLES */
+body{
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content:center;
+    align-items:center;
+    background-color:var(--BG-CLR);
+    min-height:100vh;
+    font-family:'Outfit','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main{
+    display:grid;
+    place-content:center;
+    max-width:20rem;
+    gap:.8rem;
+    padding: 1.5rem;
+    padding-top: 1rem;
+    margin:1rem;
+    border-radius:15px;
+    box-shadow:0 10px 2px 10px var(--BG-CLR);
+
+    background-color: var(--MAIN-BG-CLR);
+    font-weight:400;
+}
+
+.top {
+    background-image: url(images/image-equilibrium.jpg);
+    width:18rem;
+    height:18rem;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    border-radius:10px;
+    overflow:hidden;
+    position:relative;
+}
+
+.overlay{
+    width:18rem;
+    height:18rem;
+    background-color:hsla(178, 100%, 50%, 0.4);
+    opacity:0;
+    transition: .2s linear;
+}
+
+.top > svg{
+    opacity:0;
+    width:18rem;
+    height:18rem;
+    position:absolute;
+    top:calc(40%);
+    left:calc(42%);
+    transition: .2s linear;
+    z-index:5;
+}
+
+.top:hover{
+    cursor:pointer;
+}
+
+.top:hover svg,
+.top:hover .overlay{
+    opacity:1;
+}
+
+.middle{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    flex-flow:column nowrap;
+    gap:0.65rem;
+    padding-block-end: 1rem;
+    border-bottom: 1px solid var(--LINE);
+}
+
+.middle .heading{
+    color:var(--WHITE);
+    font-weight:600;
+    font-size:1.3rem;
+}
+
+.middle .heading:hover{
+    color:var(--HOVER-CLR);
+    cursor: pointer;
+}
+
+.middle .note{
+    color:var(--TEXT-CLR);
+    font-weight:300;
+    font-size:18px;
+}
+
+.middle .attention{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    font-size:15px;
+    font-weight:400;
+    margin-block: .75rem 0.5rem;
+}
+
+.middle .attention svg{
+    height:18px;
+    width:18px;
+    transform:translateY(2px);
+}
+
+.middle .attention .price{
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:flex-start;
+    align-items:center;
+    color:var(--HOVER-CLR);
+    gap:0.25rem;
+}
+
+.middle .attention .time{
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:flex-end;
+    align-items:center;
+    color:var(--TEXT-CLR);
+    gap:0.25rem;
+}
+
+.lower {
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:flex-start;
+    align-items:center;
+    color:var(--TEXT-CLR);
+    gap:1rem;
+    font-size:15px;
+    font-weight:300;
+}
+
+.lower img{
+    height:35px;
+    width:35px;
+    border:1px solid var(--WHITE);
+    border-radius:50%;
+}
+
+.lower .name{
+    font-weight:400;
+    color:var(--WHITE);
+}
+
+.lower .name:hover{
+    color:var(--HOVER-CLR);
+    cursor:pointer;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
